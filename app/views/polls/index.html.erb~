@@ -1,0 +1,24 @@
+<h1>Listing polls</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th>author</th>
+  </tr>
+
+<% for poll in @polls %>
+  <tr>
+    <td><%=h poll.name %></td>
+    <td><%=h poll.content %></td>
+    <td><%=get_user_name(poll.user_id) %></td>    
+    <td><%= link_to 'Show', poll %></td>
+    <td><%= link_to 'Edit', edit_poll_path(poll) %></td>
+    <td><%= link_to 'Destroy', poll, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New poll', new_poll_path %>

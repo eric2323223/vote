@@ -1,0 +1,6 @@
+hello <%=@user.uid%>,
+<p>Recent posts</p>
+<p>
+<%= render(:partial=>"recent_polls", :collection => @recent_polls) %>
+</p>
+<%=link_to "New Poll", new_poll_url%>

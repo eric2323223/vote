@@ -1,0 +1,5 @@
+<p>
+  <% link_to recent_polls.name, poll_url(recent_polls)%>
+</p>
+
+
